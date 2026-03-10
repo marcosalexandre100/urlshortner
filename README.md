@@ -260,17 +260,13 @@ Migrações são controladas via **Flyway**.
 A API permite definir uma data de expiração opcional. Durante o
 redirecionamento é verificado se a URL já expirou.
 
-Caso esteja expirada, é retornado:
-
-## 410 Gone
+Caso esteja expirada, é retornado um mensagem de erro. 
 
 ### Contador de cliques
 
 Cada redirecionamento incrementa o campo:
 
-clickCount
-
-permitindo acompanhar o número de acessos da URL curta.
+clickCount permitindo acompanhar o número de acessos da URL curta.
 
 ------------------------------------------------------------------------
 
