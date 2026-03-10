@@ -1,0 +1,143 @@
+type: collection.insomnia.rest/5.0
+name: Scratch Pad
+meta:
+  id: wrk_scratchpad
+  created: 1748649545362
+  modified: 1748649545362
+collection:
+  - name: urlshortener
+    meta:
+      id: fld_a02e887724cc4c7780e6f14537eb1068
+      created: 1760910790831
+      modified: 1773005494591
+      sortKey: -1760910790831
+    children:
+      - url: http://localhost:8080/v1/urls
+        name: Create short URL
+        meta:
+          id: req_124808d062ab4b328b2794092c94fc3c
+          created: 1760910839544
+          modified: 1773005286663
+          isPrivate: false
+          sortKey: -1760910839544
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            { 
+            	"originalUrl": "https://www.r7.com/"
+            } 
+
+        parameters:
+          - id: pair_1bf45c70f8f24df2acf1f290b277d9fb
+            disabled: false
+        headers:
+          - name: Content-Type
+            value: application/json
+            id: pair_744d8d6db7be49699dbd2e6b67f2ee68
+          - name: User-Agent
+            value: insomnia/11.1.0
+            id: pair_9b7c7964708549f580765cebf7042ead
+          - id: pair_66680f48843347019cb4109ab56e725f
+            name: X-API-Key
+            value: my-secret-key
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/urls/redirect/HiEJpH4
+        name: Redirect Original URL
+        meta:
+          id: req_6574f3387169493a8c9043123a88eeae
+          created: 1760913075618
+          modified: 1773003597911
+          isPrivate: false
+          sortKey: -1760913075618
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/urls/IXcdvv
+        name: Detailed short URL
+        meta:
+          id: req_abea3a9a5c784480b75e41b8c2babac6
+          created: 1762026104200
+          modified: 1773003569725
+          isPrivate: false
+          sortKey: -1762026104200
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/v1/urls
+        name: List all short URLs
+        meta:
+          id: req_3787315a63b34771948d521f24304c1b
+          created: 1772977148139
+          modified: 1773003546046
+          isPrivate: false
+          sortKey: -1768145253321.5
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.1.0
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Gastos
+    meta:
+      id: fld_e9a300352810473ba9cc12ce0f2f8d7a
+      created: 1762035978155
+      modified: 1762035978155
+      sortKey: -1762035978155
+  - name: Investimento
+    meta:
+      id: fld_737f1c1191fd4430ad372a907728b378
+      created: 1762035999650
+      modified: 1762035999650
+      sortKey: -1762035999650
+  - name: urlshortener 2
+    meta:
+      id: fld_6044bd8633e64ac493949015272fa7a1
+      created: 1773005507609
+      modified: 1773005537170
+      sortKey: -1760910790781
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1753828692832
+    modified: 1753828692832
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1753828692761
+    modified: 1753828692761
+    isPrivate: false

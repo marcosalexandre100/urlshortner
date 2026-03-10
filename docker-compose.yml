@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  shortnerdb:
+    image: postgres:16.3
+    container_name: shortnerdb
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: shortner
+    networks:
+      - shortner-network
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    ports:
+      - "15432:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin@admin.com
+    depends_on:
+      - shortnerdb
+    networks:
+      - shortner-network
+
+networks:
+  shortner-network:
+    driver: bridge
