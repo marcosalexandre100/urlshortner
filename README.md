@@ -155,9 +155,9 @@ Exemplo:
 
 ### GET /v1/urls/redirect/{id}
 
-### Response:
-
 ## 200 OK
+
+### Response:
 
 Redireciona automaticamente para a URL original.
 
@@ -181,7 +181,6 @@ Quando a URL existe mas já expirou.
 
 ## 200 OK
 
-### Response
 ```json
 {
   "id": "abc123",
