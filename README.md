@@ -110,6 +110,7 @@ X-API-Key: my-secret-key
   "expirationDate": "2027-12-31T23:59:59Z" 
 }
 ```
+## 201 CREATED
 
 ### Response
 ```json
@@ -131,6 +132,21 @@ X-API-Key: my-secret-key
 
 - expirationDate é opcional. Caso expirationDate seja informada, a data deve estar no futuro e o formato da data deve seguir o padrão ISO-8601.
 
+## 400 Bad Request
+
+Exemplos de mensagem
+
+- originalUrl is required
+- originalUrl must be a valid URL
+- originalUrl must start with http or https
+- Expiration date must be in the future
+
+### Response:
+```json
+{
+"message": "originalUrl is required"
+}
+```
 ------------------------------------------------------------------------
 
 ## Redirecionar URL
@@ -139,17 +155,31 @@ Exemplo:
 
 ### GET /v1/urls/redirect/{id}
 
-Resposta:
+### Response:
 
-200 OK
+## 200 OK
 
 Redireciona automaticamente para a URL original.
+
+## 410 Gone
+
+Quando a URL existe mas já expirou.
+
+### Response
+
+```json
+{
+"message": "URL expired"
+}
+```
 
 ------------------------------------------------------------------------
 
 ## Consultar detalhes da URL
 
 ### GET /v1/urls/{id}
+
+## 200 OK
 
 ### Response
 ```json
@@ -162,6 +192,17 @@ Redireciona automaticamente para a URL original.
   "clickCount": 5
 }
 ```
+
+## 404 Not Found
+
+Quando o identificador não existe.
+### Response
+```json
+{
+"message": "URL not found"
+}
+```
+
 ------------------------------------------------------------------------
 
 ## Listar URLs (paginado)
@@ -175,6 +216,8 @@ page size sort
 Exemplo:
 
 ### GET /v1/urls?size=1
+
+## 200 OK
 
 ### Response
 ```json
@@ -220,7 +263,7 @@ redirecionamento é verificado se a URL já expirou.
 
 Caso esteja expirada, é retornado:
 
-410 Gone
+## 410 Gone
 
 ### Contador de cliques
 
